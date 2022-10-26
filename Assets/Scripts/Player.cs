@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        StartCoroutine(KeepShooting());
     }
 
     void Update()
@@ -62,4 +64,20 @@ public class Player : MonoBehaviour
         // 產生出子彈
         Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
     }
+
+
+    IEnumerator KeepShooting()
+    {
+        while (true)
+        {
+
+            Fire();
+
+
+            yield return new WaitForSecond(0.5f);
+
+
+        }
+    }
+
 }
