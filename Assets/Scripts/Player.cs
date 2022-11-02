@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
             Fire();
 
 
-            yield return new WaitForSecond(0.5f);
+            yield return new WaitForSeconds (0.5f);
 
 
         }
