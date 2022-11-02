@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+   
     public float speed = 30f;
     private Rigidbody rb;
 
@@ -18,4 +19,15 @@ public class Bullet : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+
+    }
+
+
 }

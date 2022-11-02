@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -20,15 +20,23 @@ public class Enemy : MonoBehaviour
         double b = 5f;
 
         float dist = Vector3.Distance(transform.position, target.position);
-        if(dist <6)
+        if (dist < 6)
         {
             transform.localScale = new Vector3(2, 2, 3);
 
         }
         else
         {
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 }
