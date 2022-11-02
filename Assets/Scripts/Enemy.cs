@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
-
+    private float hp = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +35,15 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
+            //扣血
+            hp -= 25;
+
+            //沒血刪除自己
+            if (hp <= 0)
+            {
+                gameObject.SetActive(false);
+                Destroy(gameObject);
+            }
         }
     }
 }
