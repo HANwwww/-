@@ -21,7 +21,12 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "enemy")
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "wall")
         {
             gameObject.SetActive(false);
             Destroy(gameObject);

@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        StartCoroutine(KeepShooting());
+       
     }
 
     void Update()
@@ -66,18 +66,6 @@ public class Player : MonoBehaviour
     }
 
 
-    IEnumerator KeepShooting()
-    {
-        while (true)
-        {
-
-            Fire();
-
-
-            yield return new WaitForSeconds (0.5f);
-
-
-        }
-    }
+  
 
 }

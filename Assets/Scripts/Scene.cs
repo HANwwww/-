@@ -1,29 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Enemy : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class Scene : MonoBehaviour
 {
-    public Transform target;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet")
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
+        SceneManager.LoadScene("level2");
     }
 }
