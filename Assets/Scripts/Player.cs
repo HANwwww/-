@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Player : MonoBehaviour
     public Joystick joyStick;
     public Transform firePoint;
     public GameObject bulletPrefab;
-
+    
     private CharacterController controller;
 
     void Start()
@@ -57,6 +58,9 @@ public class Player : MonoBehaviour
         {
             Fire();
         }
+
+        
+       
     }
 
     void Fire()
