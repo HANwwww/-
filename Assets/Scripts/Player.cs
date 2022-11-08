@@ -65,7 +65,14 @@ public class Player : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "coin")
+        {
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+        }
+    }
 
-  
 
 }
